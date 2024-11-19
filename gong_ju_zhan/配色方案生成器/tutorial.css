@@ -1,0 +1,100 @@
+/* 教程页面基础样式 */
+
+.tutorial-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tutorial-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tutorial-content {
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+
+/* 文章样式 */
+
+.article {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: var(--main-bg);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.article h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.article p {
+    margin-bottom: 15px;
+}
+
+
+/* 示例展示区 */
+
+.example-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: var(--sidebar-bg);
+    border-radius: 8px;
+}
+
+.color-example {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.color-block {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+}
+
+
+/* 导航样式 */
+
+.tutorial-nav {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tutorial-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tutorial-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.tutorial-link:hover {
+    background-color: var(--sidebar-bg);
+}
+
+.icon {
+    font-size: 20px;
+}
