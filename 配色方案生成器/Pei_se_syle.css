@@ -873,3 +873,52 @@ footer {
     background: var(--primary-color);
     color: white;
 }
+/* 手机端布局优化 */
+@media screen and (max-width: 768px) {
+  /* 调整主容器布局 */
+  .tool-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 调整侧边栏顺序和布局 */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 颜色选择器部分始终显示在顶部 */
+  .color-picker-section {
+    order: 1;
+    position: sticky;
+    top: 0;
+    background: var(--card-bg);
+    z-index: 10;
+    padding: 10px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+
+  /* 主要内容区（颜色展示区）紧跟其后 */
+  .main-content {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  /* 教程导航放到最后 */
+  .tutorial-nav {
+    order: 3;
+    margin-top: 20px;
+  }
+
+  /* 优化颜色选择器布局 */
+  .color-picker-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* 调整输入框大小 */
+  #hexValue {
+    width: 100px;
+  }
+}
