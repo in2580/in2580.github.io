@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="拾色 - 免费专业的在线配色方案生成器,提供互补色、三角配色、邻近色等多种配色模式。支持实时预览、一键导出、配色方案保存等功能,助您轻松创建完美配色。">
+    <meta name="keywords" content="拾色,配色工具,在线配色工具,色彩搭配,互补色配色,三角配色,邻近色配色,设计工具,UI配色,网页配色，goodnotes配色">
+    <meta name="author" content="拾色">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="拾色 - 专业免费的在线配色工具">
+    <meta property="og:description" content="专业的在线配色方案生成器,提供多种配色模式,帮助快速创建和谐的配色方案。支持实时预览、保存、一键导出等功能。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/pei_se.html">
+    <meta property="og:image" content="https://yourwebsite.com/images/preview.jpg">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>拾色 - 免费专业的在线配色工具 | 互补色、三角配色、邻近色配色生成</title>
+    <link rel="stylesheet" href="Pei_se_syle.css">
+    <link rel="canonical" href="https://yourwebsite.com/pei_se.html">
+    <meta name="theme-color" content="#4a90e2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+</head>
+
+<body class="transition-all">
+    <header class="transition-all" role="banner">
+        <div class="site-logo">
+            <div class="logo-icon"></div>
+            <h1 class="logo-text">拾色</h1>
+        </div>
+        <div class="theme-switch">
+            <button id="themeToggle" class="theme-btn" aria-label="切换主题模式">
+                <span class="theme-icon" aria-hidden="true">🌞</span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main">
+        <article class="tool-container">
+            <aside class="sidebar" role="complementary">
+                <section class="color-picker-section">
+                    <h2>选择基础颜色</h2>
+                    <input type="color" id="baseColor" aria-label="选择基础颜色">
+                    <input type="text" id="hexValue" placeholder="#000000" aria-label="十六进制颜色值">
+                </section>
+                <nav class="tutorial-nav" aria-label="教程导航">
+                    <h3>配色教程</h3>
+                    <div class="tutorial-links">
+                        <a href="color-theory.html" class="tutorial-link">
+                            <span class="icon" aria-hidden="true">📚</span>
+                            <span>色彩理论基础</span>
+                        </a>
+                        <a href="color-schemes.html" class="tutorial-link">
+                            <span class="icon">🎨</span> 配色方案详解
+                        </a>
+                        <a href="color-psychology.html" class="tutorial-link">
+                            <span class="icon">🧠</span> 色彩心理学
+                        </a>
+                        <a href="practical-tips.html" class="tutorial-link">
+                            <span class="icon">💡</span> 实用配色技巧
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+
+            <section class="main-content" aria-label="配色工具">
+                <section class="palette-display">
+                    <div class="color-card" data-color="#FF5733">
+                        <button class="remove-color-btn" title="删除此颜色">×</button>
+                    </div>
+                    <div class="color-card" data-color="#33FF57">
+                        <button class="remove-color-btn" title="删除此颜色">×</button>
+                    </div>
+                    <div class="color-card" data-color="#5733FF">
+                        <button class="remove-color-btn" title="删除此颜色">×</button>
+                    </div>
+                    <button class="add-color-btn" title="添加更多颜色">+</button>
+                </section>
+
+                <section class="controls">
+                    <button id="generateRandom">随机生成</button>
+                    <div class="dropdown">
+                        <button id="generateHarmony" class="dropdown-btn">互补色 ▼</button>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <div class="scheme-item" data-scheme="complementary" title="互补色：对比强烈，适合强调重点和创建视觉冲击">
+                                互补色
+                            </div>
+                            <div class="scheme-item" data-scheme="triadic" title="三角配色：均衡和谐，在画面上产生丰富多彩的效果">
+                                三角配色
+                            </div>
+                            <div class="scheme-item" data-scheme="analogous" title="邻近色：和谐统一，给人平和温馨的感觉">
+                                邻近色
+                            </div>
+                            <div class="scheme-item" data-scheme="split" title="分裂互补色：既保持对比又不失和谐，适合需要多样化的设计">
+                                分裂互补色
+                            </div>
+                        </div>
+                    </div>
+                    <button id="savePalette" title="保存当前配色方案">保存</button>
+                    <button id="showSaved" title="查看已保存的配色方案">我的配色</button>
+                    <button id="export">导出</button>
+                </section>
+            </section>
+        </article>
+    </main>
+    <script src="pei_se_script.js"></script>
+    <div class="modal" id="saveModal">
+        <div class="modal-content">
+            <h3>保存配色方案</h3>
+            <input type="text" id="paletteName" placeholder="输入配色方案名称">
+            <div class="modal-buttons">
+                <button id="confirmSave">保存</button>
+                <button id="cancelSave">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="savedPalettesModal">
+        <div class="modal-content">
+            <h3>已保存的配色方案</h3>
+            <div class="saved-palettes-container">
+                <!-- 这里将通过 JavaScript 动态添加保存的配色方案 -->
+            </div>
+            <button id="closeSavedPalettes" class="close-modal-btn" aria-label="关闭对话框"></button>
+        </div>
+    </div>
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2024 拾色</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
